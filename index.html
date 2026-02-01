@@ -26,7 +26,7 @@
   *{box-sizing:border-box}
   html,body{height:100%}
   body{
-    margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial;
+    margin:0; font-family:system-ui,-apple-system, Segoe UI, Roboto, Inter, Arial;
     background:var(--bg); color:var(--ink); line-height:1.4;
   }
   header{
@@ -50,7 +50,7 @@
   label{font-size:.9rem; color:var(--muted); display:block; margin-bottom:.25rem}
   input[type=number], input[type=text], select{
     width:100%; padding:.5rem .6rem; font-size:1rem; border:1px solid var(--grid);
-    border-radius:10px; background:#fff; color:var(--ink);
+    border-radius:10px; background:#fff; color:#111827;
     transition:border-color .15s, box-shadow .15s, background .15s;
   }
   input[readonly]{background:#fbfbfb}
@@ -59,9 +59,7 @@
     display:inline-flex; align-items:center; gap:.4rem; padding:.3rem .6rem;
     background:var(--chip); border-radius:999px; font-size:.85rem; color:#334155; border:1px solid #dbeafe;
   }
-  .mode{
-    display:flex; gap:.5rem; flex-wrap:wrap; align-items:center; margin:.35rem 0 .75rem;
-  }
+  .mode{display:flex; gap:.5rem; flex-wrap:wrap; align-items:center; margin:.35rem 0 .75rem;}
   .btn{
     background:var(--brand); color:#fff; border:none; border-radius:10px;
     padding:.65rem 1rem; font-weight:600; cursor:pointer;
@@ -78,13 +76,9 @@
 
   /* Energy bars */
   .bars{display:grid; gap:.75rem}
-  .bar{
-    background:#eef2f7; border:1px dashed #d1d5db; border-radius:10px; padding:.5rem;
-  }
+  .bar{ background:#eef2f7; border:1px dashed #d1d5db; border-radius:10px; padding:.5rem; }
   .bar .label{display:flex; justify-content:space-between; font-size:.9rem; color:var(--muted); margin-bottom:.25rem}
-  .bar .track{
-    height:24px; border-radius:6px; background:#fff; border:1px solid #e5e7eb; overflow:hidden; position:relative;
-  }
+  .bar .track{ height:24px; border-radius:6px; background:#fff; border:1px solid #e5e7eb; overflow:hidden; position:relative; }
   .segment{height:100%}
   .segment.A{background:linear-gradient(90deg, var(--a), #60a5fa)}
   .segment.AL{background:linear-gradient(90deg, var(--a-latent), #c084fc)}
@@ -93,63 +87,34 @@
   .legend{display:flex; gap:.75rem; flex-wrap:wrap; font-size:.85rem; color:var(--muted); margin-top:.5rem}
   .legend .key{display:inline-flex; align-items:center; gap:.4rem}
   .legend .swatch{width:14px; height:8px; border-radius:2px}
-  .sw-A{background:var(--a)}
-  .sw-AL{background:var(--a-latent)}
-  .sw-B{background:var(--b)}
-  .sw-BL{background:var(--b-latent)}
+  .sw-A{background:var(--a)} .sw-AL{background:var(--a-latent)} .sw-B{background:var(--b)} .sw-BL{background:var(--b-latent)}
 
   /* Results */
   .grid-results{display:grid; grid-template-columns:1fr 1fr; gap:1rem}
   @media (max-width: 900px){ .grid-results{grid-template-columns:1fr} }
   .result{font-size:1.05rem}
-  .ok{color:var(--good)}
-  .warn{color:var(--warn)}
-  .bad{color:var(--error)}
+  .ok{color:var(--good)} .warn{color:var(--warn)} .bad{color:var(--error)}
   .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
 
-  /* Tooltip via abbr */
+  /* Tooltip */
   abbr[title]{text-decoration:none; border-bottom:1px dotted #94a3b8; cursor:help}
 
   .note{padding:.5rem .75rem; background:#f8fafc; border:1px solid #e5e7eb; border-radius:10px; color:#334155; font-size:.9rem}
 
-  /* Highlighting: green (likely to change) vs purple (less likely) */
-  .greenBox{
-    border:2px solid #22c55e !important;
-    background:#ecfdf5 !important;
-    box-shadow:0 0 0 3px rgba(34,197,94,0.12) inset;
-  }
-  .purpleBox{
-    border:2px solid var(--purple) !important;
-    background:#f5f3ff !important;
-    box-shadow:0 0 0 3px rgba(139,92,246,0.10) inset;
-  }
+  /* Highlighting: green vs purple */
+  .greenBox{ border:2px solid #22c55e !important; background:#ecfdf5 !important; box-shadow:0 0 0 3px rgba(34,197,94,0.12) inset; }
+  .purpleBox{ border:2px solid var(--purple) !important; background:#f5f3ff !important; box-shadow:0 0 0 3px rgba(139,92,246,0.10) inset; }
 
-  /* Graph container */
-  #graphWrap{
-    border:1px solid var(--grid);
-    border-radius:10px;
-    background:#fff;
-    padding:.5rem;
-  }
-  #tempChart{
-    width:100%; height:280px;
-    display:block;
-  }
+  /* Graph */
+  #graphWrap{ border:1px solid var(--grid); border-radius:10px; background:#fff; padding:.5rem; }
+  #tempChart{ width:100%; height:280px; display:block; }
 
-  /* Small label below Tf boxes */
-  .tf-caption{
-    font-size:.8rem; color:var(--muted); margin-top:.25rem;
-  }
+  .tf-caption{ font-size:.8rem; color:var(--muted); margin-top:.25rem; }
 
-  /* Equation block */
   .equation{
     font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
-    background:#fff;
-    border:1px solid var(--grid);
-    border-radius:10px;
-    padding:.6rem .8rem;
-    overflow-x:auto;
-    white-space:pre-wrap;
+    background:#fff; border:1px solid var(--grid); border-radius:10px;
+    padding:.6rem .8rem; overflow-x:auto; white-space:pre-wrap;
   }
   .eqLabel{color:#334155; font-weight:600; margin-bottom:.25rem}
   .eqSmall{color:#6b7280; font-size:.9rem; margin-top:.25rem}
@@ -165,9 +130,7 @@
   <!-- Global Controls -->
   <section class="card">
     <div class="title">
-      <div>
-        <strong>Mode</strong>
-      </div>
+      <div><strong>Mode</strong></div>
       <div class="controls">
         <span class="chip">All units: mass (kg), temp (°C), c (J·kg⁻¹·K⁻¹), L (J·kg⁻¹)</span>
       </div>
@@ -176,10 +139,23 @@
       <label class="chip"><input type="radio" name="mode" value="finalT" checked> Find Final Temperature</label>
       <label class="chip"><input type="radio" name="mode" value="unknownC"> Find Unknown Specific Heat</label>
       <label class="chip"><input type="checkbox" id="phaseToggle"> Include Phase Change</label>
+
+      <!-- Q mode: new tick + box -->
+      <label class="chip" title="Single-object for A using Q = m c ΔT">
+        <input type="checkbox" id="useQ"> Q value (single A)
+      </label>
+      <label style="display:inline-flex; align-items:center; gap:.35rem">
+        <span>Q (J)</span>
+        <input type="number" id="QInput" step="1" style="width:160px" placeholder="enter Q or leave blank">
+      </label>
+
       <button class="btn" id="calcBtn">Calculate</button>
       <button class="btn secondary" id="resetBtn" title="Reset to sensible defaults">Reset</button>
     </div>
-    <div class="help">For unknown specific heat mode, phase change is disabled (analytical derivation assumes no latent heat).</div>
+    <div class="help">
+      Unknown c mode disables phase change (derivation assumes no latent heat).<br>
+      <strong>Q value (single A):</strong> Hides B. Enter <em>T<sub>f</sub></em> in A, then either type Q and leave c blank to solve <em>c</em>, or type c (for A) and leave Q blank to solve <em>Q</em>.
+    </div>
   </section>
 
   <!-- Substances -->
@@ -214,19 +190,19 @@
         </div>
       </div>
 
-      <!-- Final temperature box (readonly) -->
+      <!-- Final temperature box -->
       <div class="row">
         <div>
           <label>Final Temperature T<sub>f</sub> (°C)</label>
           <input type="text" id="TfA_box" value="—" readonly class="greenBox">
-          <div class="tf-caption">Shared equilibrium (same for A & B)</div>
+          <div class="tf-caption">Shared equilibrium (two-body) OR editable (Q mode)</div>
         </div>
         <div></div>
       </div>
 
       <div id="cABlock">
         <label><abbr title="Specific heat capacity">c</abbr> (J·kg⁻¹·K⁻¹)</label>
-        <input type="number" step="1" id="cA" value="4186" min="0" class="greenBox">
+        <input type="number" step="1" id="cA" value="4186" min="0" class="greenBox" placeholder="leave blank to solve c from Q">
       </div>
 
       <div id="cAStates" style="display:none">
@@ -300,7 +276,6 @@
         </div>
       </div>
 
-      <!-- Final temperature box (readonly) -->
       <div class="row">
         <div>
           <label>Final Temperature T<sub>f</sub> (°C)</label>
@@ -357,7 +332,7 @@
     </div>
   </section>
 
-  <!-- NEW: Equation used -->
+  <!-- Equation used -->
   <section class="card">
     <div class="title"><strong>Energy Balance Equation (used)</strong></div>
     <div class="eqLabel">Heat lost by the hotter side = Heat gained by the colder side</div>
@@ -400,7 +375,7 @@
           <div class="label"><span>Energy change Q<sub>A</sub></span><span id="QA_lab">0 J</span></div>
           <div class="track" id="barA"></div>
         </div>
-        <div class="bar">
+        <div class="bar" id="barB_wrap">
           <div class="label"><span>Energy change Q<sub>B</sub></span><span id="QB_lab">0 J</span></div>
           <div class="track" id="barB"></div>
         </div>
@@ -477,6 +452,9 @@ const phaseToggle = $('#phaseToggle');
 const calcBtn = $('#calcBtn');
 const resetBtn = $('#resetBtn');
 
+const useQ = $('#useQ');               /* NEW */
+const QInput = $('#QInput');           /* NEW */
+
 const presetA = $('#presetA'), presetB = $('#presetB');
 const stateA = $('#stateA'), stateB = $('#stateB');
 const mA = $('#mA'), mB = $('#mB');
@@ -494,6 +472,7 @@ const headline = $('#headline'), details = $('#details'), consCheck = $('#consCh
 const notes = $('#notes'), derivation = $('#derivation'), workings = $('#workings');
 
 const barA = $('#barA'), barB = $('#barB');
+const barB_wrap = $('#barB_wrap');
 const QA_lab = $('#QA_lab'), QB_lab = $('#QB_lab');
 
 const TfA_box = $('#TfA_box'), TfB_box = $('#TfB_box');
@@ -555,6 +534,34 @@ function syncPhaseUI(){
   updateHighlights();
 }
 
+/* ---------- Q mode: show/hide B and make A's Tf editable ---------- */
+function syncQModeUI(){
+  const on = useQ.checked;
+  const cardB = $('#cardB');
+  if (on){
+    // Hide B panel and B bar
+    cardB.style.display = 'none';
+    barB_wrap.style.display = 'none';
+    // Make A's Tf editable as number
+    try{ TfA_box.type = 'number'; }catch(e){}
+    TfA_box.readOnly = false;
+    TfA_box.step = '0.1';
+    if (TfA_box.value==='—' || TfA_box.value==='') TfA_box.value = '20';
+    // Clear two-body equation box to avoid confusion; will show single equation here
+    eqSym.textContent = '—';
+    eqNum.textContent = '—';
+  } else {
+    // Show B and bar again
+    cardB.style.display = '';
+    barB_wrap.style.display = '';
+    // Restore TfA to readonly text indicator
+    try{ TfA_box.type = 'text'; }catch(e){}
+    TfA_box.readOnly = true;
+    TfA_box.value = '—';
+    // Also clear Q input display if needed
+  }
+}
+
 /* ---------- Highlighting logic ---------- */
 function makePurple(elList){
   elList.forEach(el=>{ if(el){ el.classList.add('purpleBox'); el.classList.remove('greenBox'); }});
@@ -563,22 +570,18 @@ function makeGreen(elList){
   elList.forEach(el=>{ if(el){ el.classList.add('greenBox'); el.classList.remove('purpleBox'); }});
 }
 function updateHighlights(){
-  // Always-green controls: state, mass, initial temp, final temp boxes
   makeGreen([stateA, mA, TAi, TfA_box]);
   makeGreen([stateB, mB, TBi, TfB_box]);
 
   if (!phaseToggle.checked){
-    // Single c visible & green
     makeGreen([cA, cB]);
   } else {
-    // Per-state c: selected state's c is green; others purple
     const cA_map = {solid:cA_s, liquid:cA_l, gas:cA_g};
     const cB_map = {solid:cB_s, liquid:cB_l, gas:cB_g};
     Object.values(cA_map).forEach(x=>x && x.classList.add('purpleBox'));
     makeGreen([cA_map[stateA.value]]);
     Object.values(cB_map).forEach(x=>x && x.classList.add('purpleBox'));
     makeGreen([cB_map[stateB.value]]);
-    // Latent and thresholds less likely to change — purple
     makePurple([TmA, TbA, LfA, LvA, TmB, TbB, LfB, LvB]);
   }
 }
@@ -603,25 +606,18 @@ function cByState(cS, cL, cG, state){
   return Number(cL);
 }
 
-/* ---------- Phase-change simulation with history ---------- */
+/* ---------- Two-body phase-change simulation with history ---------- */
 function simulate_with_phase(A, B){
   const a = JSON.parse(JSON.stringify(A));
   const b = JSON.parse(JSON.stringify(B));
   let QA = 0, QB = 0;
   let A_sens = 0, A_lat = 0, B_sens = 0, B_lat = 0;
-  const history = [{Ta:a.T, Tb:b.T}]; // start
+  const history = [{Ta:a.T, Tb:b.T}];
 
   const getC = (x)=> cByState(x.cS, x.cL, x.cG, x.state);
   function nextThresholdT(x, dir){
-    if (dir>0){ // heating
-      if (x.state==='solid') return x.Tm;
-      if (x.state==='liquid') return x.Tb;
-      return +Infinity;
-    } else if (dir<0){ // cooling
-      if (x.state==='gas') return x.Tb;
-      if (x.state==='liquid') return x.Tm;
-      return -Infinity;
-    }
+    if (dir>0){ if (x.state==='solid') return x.Tm; if (x.state==='liquid') return x.Tb; return +Infinity; }
+    else if (dir<0){ if (x.state==='gas') return x.Tb; if (x.state==='liquid') return x.Tm; return -Infinity; }
     return x.T;
   }
   function moveTo(x, Tnew){
@@ -767,29 +763,25 @@ function readParams(){
   };
 }
 
-/* ---------- Build equation text (symbolic + numeric) ---------- */
+/* ---------- Build equation text (two-body) ---------- */
 function buildEquation(p, result){
   const Tf = result.Tf;
   const eps = 1e-9;
 
-  // Helper to describe phase path
   function phasePath(x, Ti){
     const parts = [x.state];
-    // rough path guess: compare Ti and Tf vs thresholds
     const up = Tf > Ti + eps;
     const down = Tf < Ti - eps;
-    let current = x.state;
     if (up){
-      if (current==='solid' && Tf> x.Tm + eps) parts.push('liquid');
-      if ((current==='solid' || current==='liquid') && Tf> x.Tb + eps) parts.push('gas');
+      if (x.state==='solid' && Tf> x.Tm + eps) parts.push('liquid');
+      if ((x.state==='solid' || x.state==='liquid') && Tf> x.Tb + eps) parts.push('gas');
     } else if (down){
-      if (current==='gas' && Tf< x.Tb - eps) parts.push('liquid');
-      if ((current==='gas' || current==='liquid') && Tf< x.Tm - eps) parts.push('solid');
+      if (x.state==='gas' && Tf< x.Tb - eps) parts.push('liquid');
+      if ((x.state==='gas' || x.state==='liquid') && Tf< x.Tm - eps) parts.push('solid');
     }
     return parts.join(' → ');
   }
 
-  // Build stage terms for a side (positive magnitudes)
   function stageTerms(side, breakdownLatJ){
     const terms = [];
     const x = side;
@@ -803,127 +795,70 @@ function buildEquation(p, result){
 
     const up = Tf > Ti + eps;
     const down = Tf < Ti - eps;
-    let latAbs = Math.abs(breakdownLatJ || 0); // amount of latent used (J), for partial φ
-    // Helper add
+    let latAbs = Math.abs(breakdownLatJ || 0);
     function add(termSym, termNum, valJ){
       if (Math.abs(valJ) > 1e-12){
         terms.push({sym:termSym, num:termNum, J: Math.abs(valJ)});
       }
     }
 
-    if (!up && !down){
-      return terms;
-    }
+    if (!up && !down) return terms;
 
     if (up){
-      // heating
       if (state==='solid'){
         if (Tf <= Tm + eps){
-          add(`m c_s (T_f − T_i)`, `${m}·${cS}·(${(Tf-Ti).toFixed(3)})`, m*cS*(Tf-Ti));
-          return terms;
+          add(`m c_s (T_f − T_i)`, `${m}·${cS}·(${(Tf-Ti).toFixed(3)})`, m*cS*(Tf-Ti)); return terms;
         } else {
           add(`m c_s (T_m − T_i)`, `${m}·${cS}·(${(Tm-Ti).toFixed(3)})`, m*cS*(Tm-Ti));
-          // Latent fusion
           const Lfull = m*Lf;
-          if (Tf > Tm + eps){
-            add(`m L_f`, `${m}·${Lf}`, Lfull);
-            latAbs = Math.max(0, latAbs - Lfull);
-            state='liquid'; Ti=Tm;
-          } else { // Tf ~ Tm: partial
-            const used = Math.min(Lfull, latAbs);
-            const phi = used>0 ? used/Lfull : 0;
-            add(`φ·m L_f (φ=${phi.toFixed(2)})`, `${phi.toFixed(2)}·${m}·${Lf}`, used);
-            return terms;
-          }
+          if (Tf > Tm + eps){ add(`m L_f`, `${m}·${Lf}`, Lfull); latAbs = Math.max(0, latAbs - Lfull); state='liquid'; Ti=Tm; }
+          else { const used = Math.min(Lfull, latAbs); const phi = used>0 ? used/Lfull : 0; add(`φ·m L_f (φ=${phi.toFixed(2)})`, `${phi.toFixed(2)}·${m}·${Lf}`, used); return terms; }
         }
       }
       if (state==='liquid'){
         if (Tf <= Tb + eps){
-          add(`m c_l (T_f − T)`, `${m}·${cL}·(${(Tf-Ti).toFixed(3)})`, m*cL*(Tf-Ti));
-          return terms;
+          add(`m c_l (T_f − T)`, `${m}·${cL}·(${(Tf-Ti).toFixed(3)})`, m*cL*(Tf-Ti)); return terms;
         } else {
           add(`m c_l (T_b − T)`, `${m}·${cL}·(${(Tb-Ti).toFixed(3)})`, m*cL*(Tb-Ti));
-          // Latent vaporisation
           const Lfull = m*Lv;
-          if (Tf > Tb + eps){
-            add(`m L_v`, `${m}·${Lv}`, Lfull);
-            latAbs = Math.max(0, latAbs - Lfull);
-            state='gas'; Ti=Tb;
-          } else { // Tf ~ Tb partial
-            const used = Math.min(Lfull, latAbs);
-            const phi = used>0 ? used/Lfull : 0;
-            add(`φ·m L_v (φ=${phi.toFixed(2)})`, `${phi.toFixed(2)}·${m}·${Lv}`, used);
-            return terms;
-          }
+          if (Tf > Tb + eps){ add(`m L_v`, `${m}·${Lv}`, Lfull); latAbs = Math.max(0, latAbs - Lfull); state='gas'; Ti=Tb; }
+          else { const used = Math.min(Lfull, latAbs); const phi = used>0 ? used/Lfull : 0; add(`φ·m L_v (φ=${phi.toFixed(2)})`, `${phi.toFixed(2)}·${m}·${Lv}`, used); return terms; }
         }
       }
-      if (state==='gas'){
-        add(`m c_g (T_f − T)`, `${m}·${cG}·(${(Tf-Ti).toFixed(3)})`, m*cG*(Tf-Ti));
-        return terms;
-      }
+      if (state==='gas'){ add(`m c_g (T_f − T)`, `${m}·${cG}·(${(Tf-Ti).toFixed(3)})`, m*cG*(Tf-Ti)); return terms; }
     } else if (down){
-      // cooling
       if (state==='gas'){
-        if (Tf >= Tb - eps){
-          add(`m c_g (T_i − T_f)`, `${m}·${cG}·(${(Ti-Tf).toFixed(3)})`, m*cG*(Ti-Tf));
-          return terms;
-        } else {
+        if (Tf >= Tb - eps){ add(`m c_g (T_i − T_f)`, `${m}·${cG}·(${(Ti-Tf).toFixed(3)})`, m*cG*(Ti-Tf)); return terms; }
+        else {
           add(`m c_g (T_i − T_b)`, `${m}·${cG}·(${(Ti-Tb).toFixed(3)})`, m*cG*(Ti-Tb));
-          // Condensation (release)
           const Lfull = m*Lv;
-          if (Tf < Tb - eps){
-            add(`m L_v`, `${m}·${Lv}`, Lfull);
-            latAbs = Math.max(0, latAbs - Lfull);
-            state='liquid'; Ti=Tb;
-          } else { // Tf ~ Tb partial
-            const used = Math.min(Lfull, latAbs);
-            const phi = used>0 ? used/Lfull : 0;
-            add(`φ·m L_v (φ=${phi.toFixed(2)})`, `${phi.toFixed(2)}·${m}·${Lv}`, used);
-            return terms;
-          }
+          if (Tf < Tb - eps){ add(`m L_v`, `${m}·${Lv}`, Lfull); latAbs = Math.max(0, latAbs - Lfull); state='liquid'; Ti=Tb; }
+          else { const used = Math.min(Lfull, latAbs); const phi = used>0 ? used/Lfull : 0; add(`φ·m L_v (φ=${phi.toFixed(2)})`, `${phi.toFixed(2)}·${m}·${Lv}`, used); return terms; }
         }
       }
       if (state==='liquid'){
-        if (Tf >= Tm - eps){
-          add(`m c_l (T − T_f)`, `${m}·${cL}·(${(Ti-Tf).toFixed(3)})`, m*cL*(Ti-Tf));
-          return terms;
-        } else {
+        if (Tf >= Tm - eps){ add(`m c_l (T − T_f)`, `${m}·${cL}·(${(Ti-Tf).toFixed(3)})`, m*cL*(Ti-Tf)); return terms; }
+        else {
           add(`m c_l (T − T_m)`, `${m}·${cL}·(${(Ti-Tm).toFixed(3)})`, m*cL*(Ti-Tm));
-          // Freezing (release)
           const Lfull = m*Lf;
-          if (Tf < Tm - eps){
-            add(`m L_f`, `${m}·${Lf}`, Lfull);
-            latAbs = Math.max(0, latAbs - Lfull);
-            state='solid'; Ti=Tm;
-          } else { // Tf ~ Tm partial
-            const used = Math.min(Lfull, latAbs);
-            const phi = used>0 ? used/Lfull : 0;
-            add(`φ·m L_f (φ=${phi.toFixed(2)})`, `${phi.toFixed(2)}·${m}·${Lf}`, used);
-            return terms;
-          }
+          if (Tf < Tm - eps){ add(`m L_f`, `${m}·${Lf}`, Lfull); latAbs = Math.max(0, latAbs - Lfull); state='solid'; Ti=Tm; }
+          else { const used = Math.min(Lfull, latAbs); const phi = used>0 ? used/Lfull : 0; add(`φ·m L_f (φ=${phi.toFixed(2)})`, `${phi.toFixed(2)}·${m}·${Lf}`, used); return terms; }
         }
       }
-      if (state==='solid'){
-        add(`m c_s (T − T_f)`, `${m}·${cS}·(${(Ti-Tf).toFixed(3)})`, m*cS*(Ti-Tf));
-        return terms;
-      }
+      if (state==='solid'){ add(`m c_s (T − T_f)`, `${m}·${cS}·(${(Ti-Tf).toFixed(3)})`, m*cS*(Ti-Tf)); return terms; }
     }
     return terms;
   }
 
-  // Decide which side lost/gained heat
   const QA = result.QA, QB = result.QB;
   const hotSide = (QA < 0) ? {side:'A', data:p.A, Q:QA, lat:result.breakdownA.lat} :
                     (QB < 0) ? {side:'B', data:p.B, Q:QB, lat:result.breakdownB.lat} : {side:'A', data:p.A, Q:QA, lat:result.breakdownA.lat};
   const coldSide = (hotSide.side==='A') ? {side:'B', data:p.B, Q:QB, lat:result.breakdownB.lat}
                                         : {side:'A', data:p.A, Q:QA, lat:result.breakdownA.lat};
 
-  // Build term lists (positive magnitudes)
   let termsHot = [], termsCold = [];
   if (!p.phase){
-    // simple: use single-phase c values
     const h = hotSide.data, c = coldSide.data;
-    // For display we write with positive ΔT
     const dTh = Math.abs(Tf - h.T);
     const dTc = Math.abs(Tf - c.T);
     const ch = (hotSide.side==='A') ? (p.A.c) : (p.B.c);
@@ -939,11 +874,9 @@ function buildEquation(p, result){
     termsCold = stageTerms(coldSide.data, coldSide.lat);
   }
 
-  // Labels with phase path
   const hotLbl = `${hotSide.data.label} [${phasePath(hotSide.data, hotSide.data.T)}]`;
   const coldLbl = `${coldSide.data.label} [${phasePath(coldSide.data, coldSide.data.T)}]`;
 
-  // Assemble strings
   function joinSyms(ts){ return ts.map(t=>t.sym).join(' + '); }
   function joinNums(ts){ return ts.map(t=>t.num).join(' + '); }
   function sumJ(ts){ return ts.reduce((a,b)=>a + (b.J||0), 0); }
@@ -957,10 +890,81 @@ function buildEquation(p, result){
 
 /* ---------- Compute & render ---------- */
 function computeAndRender(){
-  const mode = getMode();
-  const p = readParams();
+  const qMode = useQ.checked;
 
+  if (qMode){
+    // Single-object (A) using Q = m c ΔT
+    const m = Number(mA.value);
+    const Ti = Number(TAi.value);
+    const Tf = Number(TfA_box.value);
+    const c = (cA.value==='' ? NaN : Number(cA.value));
+    const Q = (QInput.value==='' ? NaN : Number(QInput.value));
+
+    const bad = (msg)=>{
+      headline.innerHTML = '';
+      details.innerHTML = '';
+      consCheck.textContent = '';
+      notes.textContent = '';
+      eqSym.textContent = '—'; eqNum.textContent = '—';
+      QA_lab.textContent = '0 J'; QB_lab.textContent = '0 J';
+      barA.innerHTML = ''; barB.innerHTML = '';
+      // keep graph minimal
+      renderGraph([{Ta:isFinite(Ti)?Ti:0, Tb:isFinite(Ti)?Ti:0}]);
+      updateHighlights();
+      // Show message in details
+      details.innerHTML = `<span class="bad">${msg}</span>`;
+    };
+
+    if (!isFinite(m) || m<=0) return bad('Please enter a valid mass m > 0 for A.');
+    if (!isFinite(Ti) || !isFinite(Tf)) return bad('Please enter valid T₍i₎ and T₍f₎ for A.');
+    const dT = Tf - Ti;
+    if (!isFinite(dT) || dT===0) return bad('Temperature change ΔT must be non‑zero.');
+
+    let solvedQ = null, solvedC = null, modeText = '';
+    if (!isNaN(Q) && isNaN(c)){
+      // Solve for c
+      solvedC = Q / (m * dT);
+      if (!isFinite(solvedC)) return bad('Unable to compute c — check Q, m, and ΔT.');
+      cA.value = solvedC; // fill result to UI
+      modeText = 'Computed specific heat (A)';
+      headline.innerHTML = `${modeText}: <strong>${fmtNum(solvedC,5)} J·kg⁻¹·K⁻¹</strong>`;
+      eqSym.textContent = `c = Q / (m ΔT)`;
+      eqNum.textContent = `c = ${Q} / (${m} · (${Tf} − ${Ti})) = ${fmtNum(solvedC,5)} J·kg⁻¹·K⁻¹`;
+      // For visuals, we can also show Q implied by result:
+      const impliedQ = m * solvedC * dT;
+      QA_lab.textContent = fmtJ(impliedQ);
+      QB_lab.textContent = '0 J';
+      renderBars(impliedQ, 0, {sens:impliedQ, lat:0}, {sens:0,lat:0});
+    } else {
+      // Prefer computing Q if c given or both given
+      const cUse = isNaN(c) ? null : c;
+      if (cUse===null) return bad('Enter Q (to solve c) OR enter c (to solve Q).');
+      solvedQ = m * cUse * dT;
+      modeText = 'Computed heat (A)';
+      headline.innerHTML = `${modeText}: <strong>${fmtJ(solvedQ)}</strong> (${solvedQ>=0?'absorbed (warming)':'released (cooling)'})`;
+      eqSym.textContent = `Q = m c (T_f − T_i)`;
+      eqNum.textContent = `Q = ${m} · ${cUse} · (${Tf} − ${Ti}) = ${fmtJ(solvedQ)}`;
+      QA_lab.textContent = fmtJ(solvedQ);
+      QB_lab.textContent = '0 J';
+      renderBars(solvedQ, 0, {sens:solvedQ, lat:0}, {sens:0,lat:0});
+    }
+
+    // Details + notes; clear two-body conservation line (not applicable)
+    details.innerHTML = `Using A only: m = ${m} kg, ΔT = ${(dT).toFixed(3)} K.`;
+    consCheck.textContent = 'Single-object calculation (B removed).';
+    notes.textContent = 'Sign convention — Q>0 for heat absorbed (warming), Q<0 for heat released (cooling).';
+
+    // Graph: A from Ti→Tf; keep B line hidden but plot stays okay
+    renderGraph([{Ta:Ti, Tb:TBi.value?Number(TBi.value):0}, {Ta:Tf, Tb:TBi.value?Number(TBi.value):0}]);
+
+    // Done with Q mode
+    return;
+  }
+
+  // NORMAL two-body routes
+  const p = readParams();
   let result = null;
+  const mode = getMode();
 
   if (mode==='finalT'){
     if (!p.phase){
@@ -1007,16 +1011,13 @@ function computeAndRender(){
       notes.textContent = 'During phase change, the temperature pauses at Tm or Tb while latent heat is absorbed/released.';
     }
   } else if (mode==='unknownC'){
-    // Solve for unknown c (no phase)
     const which = prompt("Which substance has unknown specific heat? Type 'A' or 'B'.", "A");
     if (!which || !['A','B','a','b'].includes(which.trim())) {
       headline.textContent = 'Unknown specific heat: cancelled.';
       details.textContent = '';
       consCheck.textContent = '';
       renderBars(0,0,{sens:0,lat:0},{sens:0,lat:0});
-      renderGraph([{Ta:Number(TAi.value), Tb:Number(TBi.value)}]); // minimal
-      TfA_box.value = '—'; TfB_box.value = '—';
-      // Clear equation display
+      renderGraph([{Ta:Number(TAi.value), Tb:Number(TBi.value)}]);
       eqSym.textContent = '—'; eqNum.textContent = '—';
       return;
     }
@@ -1080,7 +1081,7 @@ c_B = - [ (${mA_})·(${cA_})·(${Tf_meas - TAi_}) ] / [ (${mB_})·(${Tf_meas - T
     notes.textContent = 'Phase change intentionally disabled in Unknown c mode.';
   }
 
-  // Common rendering
+  // Common rendering (two-body)
   if (result){
     TfA_box.value = `${fmtNum(result.Tf,4)} °C`;
     TfB_box.value = `${fmtNum(result.Tf,4)} °C`;
@@ -1094,7 +1095,6 @@ c_B = - [ (${mA_})·(${cA_})·(${Tf_meas - TAi_}) ] / [ (${mB_})·(${Tf_meas - T
     renderBars(result.QA, result.QB, result.breakdownA, result.breakdownB);
     renderGraph(result.history);
 
-    // Equation used
     const eq = buildEquation(readParams(), result);
     eqSym.textContent = eq.symStr;
     eqNum.textContent = eq.numStr;
@@ -1105,11 +1105,10 @@ c_B = - [ (${mA_})·(${cA_})·(${Tf_meas - TAi_}) ] / [ (${mB_})·(${Tf_meas - T
     eqSym.textContent = '—'; eqNum.textContent = '—';
   }
 
-  // Labels
   QA_lab.textContent = result ? fmtJ(result.QA) : '0 J';
   QB_lab.textContent = result ? fmtJ(result.QB) : '0 J';
 
-  updateHighlights(); // ensure correct green/purple after any state changes
+  updateHighlights();
 }
 
 /* ---------- Energy bars ---------- */
@@ -1235,6 +1234,11 @@ function setDefaults(){
   phaseToggle.checked = true;
   syncPhaseUI();
   TfA_box.value = '—'; TfB_box.value = '—';
+
+  // Q mode off by default
+  useQ.checked = false;
+  QInput.value = '';
+  syncQModeUI();
 }
 
 /* ---------- Events ---------- */
@@ -1254,9 +1258,9 @@ presetB.addEventListener('change', ()=> applyPreset('B', presetB.value));
   });
 });
 
-phaseToggle.addEventListener('change', ()=>{
-  syncPhaseUI();
-});
+phaseToggle.addEventListener('change', ()=>{ syncPhaseUI(); });
+useQ.addEventListener('change', ()=>{ syncQModeUI(); });          /* NEW */
+QInput.addEventListener('input', ()=>{/* no-op; read at calc */});/* NEW */
 
 calcBtn.addEventListener('click', computeAndRender);
 resetBtn.addEventListener('click', ()=>{ setDefaults(); computeAndRender(); });
